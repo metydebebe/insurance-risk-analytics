@@ -1,0 +1,18 @@
+# Python cache files
+__pycache__/
+*.pyc
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environment directory
+.env
+.conda/
+
+# Data files
+data/
+.csv
+
+# Other temporary files
+.log
+.tmp
