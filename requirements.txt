@@ -20,7 +20,7 @@ beautifulsoup4==4.13.4
 billiard==4.2.1
 bleach==6.2.0
 celery==5.5.3
-certifi @ file:///home/conda/feedstock_root/build_artifacts/certifi_1746569525376/work/certifi
+certifi
 cffi==1.17.1
 charset-normalizer==3.4.2
 click==8.2.1
