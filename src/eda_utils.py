@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 
+
 def plot_histogram(df: pd.DataFrame, column: str, bins=30, save_path=None):
     """
     Plot histogram for a numerical column.
@@ -16,6 +17,7 @@ def plot_histogram(df: pd.DataFrame, column: str, bins=30, save_path=None):
     if save_path:
         plt.savefig(save_path)
     plt.show()
+
 
 def plot_boxplot(df: pd.DataFrame, column: str, by=None, save_path=None):
     """
@@ -32,11 +34,13 @@ def plot_boxplot(df: pd.DataFrame, column: str, by=None, save_path=None):
         plt.savefig(save_path)
     plt.show()
 
+
 def calculate_loss_ratio(df: pd.DataFrame) -> pd.Series:
     """
     Calculate Loss Ratio = TotalClaims / TotalPremium
     """
     return df['TotalClaims'] / df['TotalPremium']
+
 
 def plot_correlation_matrix(df: pd.DataFrame, columns: list, save_path=None):
     """
