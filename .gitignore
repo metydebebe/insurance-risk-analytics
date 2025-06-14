@@ -10,8 +10,9 @@ __pycache__/
 .conda/
 
 # Data files
-data/
-.csv
+data/*.csv
+data/raw/MachineLearningRating_v3.txt
+data/processed/cleaned_task1_insurance_data.csv
 
 # Other temporary files
 .log
