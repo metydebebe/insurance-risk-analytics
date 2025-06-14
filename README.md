@@ -4,7 +4,7 @@ This project is part of the AlphaCare Insurance Solutions (ACIS) initiative to d
 
 # Insurance Risk Analytics - Task 1: Exploratory Data Analysis (EDA)
 
-## Project Overview
+## Overview
 
 The goal of Task 1 is to perform a foundational Exploratory Data Analysis (EDA) on historical insurance claim data to uncover patterns in risk and profitability, which will inform marketing strategies and premium optimization.
 
@@ -81,3 +81,55 @@ pip install -r requirements.txt
 
 - Open `notebooks/task-1-eda.ipynb` in Jupyter Lab or Notebook.
 - Follow the notebook cells to reproduce the analysis and visualizations.
+
+## Task 2: Reproducible and Auditable Data Pipeline with DVC
+
+This project uses **Data Version Control (DVC)** to ensure that all datasets are versioned alongside the codebase, enabling reproducibility, auditability, and compliance with regulatory standards in finance and insurance.
+
+### Overview
+
+- DVC tracks large data files efficiently by storing them outside Git, while metadata files (`.dvc`) are committed to Git.
+- A local remote storage directory is configured to hold the actual data files.
+- This setup allows any team member or auditor to reproduce analyses or model results exactly, by syncing the correct data versions.
+
+### Setup Instructions
+
+1. **Install DVC**
+
+   pip install dvc
+
+2. **Initialize DVC in the project root**
+
+   dvc init
+   git add .dvc .gitignore
+   git commit -m "Initialize DVC for data version control"
+
+3. **Configure Local Remote Storage**
+
+   Create a directory on your machine to store DVC-tracked data (outside the Git repo):
+
+   mkdir -p /path/to/local/dvc-storage
+   dvc remote add -d localstorage /path/to/local/dvc-storage
+   git add .dvc/config
+   git commit -m "Configure local DVC remote storage"
+
+4. **Add Datasets to DVC**
+
+   Place your raw dataset in the project (e.g., `data/raw/MachineLearningRating_v3.txt`), then track it with DVC:
+
+   dvc add data/raw/MachineLearningRating_v3.txt
+   git add data/raw/MachineLearningRating_v3.txt.dvc .gitignore
+   git commit -m "Add raw dataset to DVC tracking"
+
+5. **Push Data to Remote Storage**
+
+   Upload the large data files to the configured remote storage:
+
+   dvc push
+
+6. **Reproducing the Environment**
+
+   To reproduce the exact data versions on another machine or after cloning the repo:
+
+   git clone
+   dvc pull
