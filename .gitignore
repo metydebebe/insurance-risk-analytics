@@ -13,6 +13,7 @@ __pycache__/
 data/*.csv
 data/raw/MachineLearningRating_v3.txt
 data/processed/cleaned_task1_insurance_data.csv
+data/processed/cleaned_task3_MachineLearningRating.csv
 
 # Other temporary files
 .log
