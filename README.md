@@ -2,13 +2,13 @@
 
 This project is part of the AlphaCare Insurance Solutions (ACIS) initiative to develop advanced risk and predictive analytics for car insurance in South Africa.
 
-# Insurance Risk Analytics - Task 1: Exploratory Data Analysis (EDA)
+# Task 1: Exploratory Data Analysis (EDA)
 
-## Overview
+### Overview
 
 The goal of Task 1 is to perform a foundational Exploratory Data Analysis (EDA) on historical insurance claim data to uncover patterns in risk and profitability, which will inform marketing strategies and premium optimization.
 
-## Data Description
+### Data Description
 
 The dataset covers insurance policies and claims from February 2014 to August 2015, containing over 1 million records with 52 features including:
 
@@ -36,7 +36,7 @@ The dataset covers insurance policies and claims from February 2014 to August 20
 5. **Documentation:**  
    Provide detailed comments explanations.
 
-## Repository Structure
+### Repository Structure
 
 insurance-risk-analytics/
 │
@@ -61,7 +61,7 @@ insurance-risk-analytics/
 
 ---
 
-## How to Run
+### How to Run
 
 1. Clone the repository:
 
@@ -82,7 +82,7 @@ pip install -r requirements.txt
 - Open `notebooks/task-1-eda.ipynb` in Jupyter Lab or Notebook.
 - Follow the notebook cells to reproduce the analysis and visualizations.
 
-## Task 2: Reproducible and Auditable Data Pipeline with DVC
+# Task 2: Reproducible and Auditable Data Pipeline with DVC
 
 This project uses **Data Version Control (DVC)** to ensure that all datasets are versioned alongside the codebase, enabling reproducibility, auditability, and compliance with regulatory standards in finance and insurance.
 
@@ -133,3 +133,45 @@ This project uses **Data Version Control (DVC)** to ensure that all datasets are
 
    git clone
    dvc pull
+
+# Task 3: Hypothesis Testing and Risk Analytics
+
+This task involves performing hypothesis testing to identify significant differences in insurance risk metrics across key segments in the dataset. The goal is to support AlphaCare Insurance Solutions (ACIS) in refining their pricing and risk strategies based on data-driven insights.
+
+### Overview
+
+Objective: Test for statistically significant differences in claim frequency, claim severity, and margin across different groups.
+
+### Segments analyzed
+
+Provinces (Gauteng vs. Western Cape)
+
+Zip Codes (selected high-frequency postal codes)
+
+Gender (Male vs. Female)
+
+### Key Performance Indicators (KPIs)
+
+Claim Frequency: Binary indicator (1 if any claim occurred, 0 otherwise).
+
+Claim Severity: Average claim amount given a claim occurred.
+
+Margin: Difference between total premium collected and total claims paid.
+
+### Methodology
+
+Data Preparation:
+
+Cleaned dataset by removing invalid records and columns with excessive missing data.
+
+Converted relevant columns to categorical data types.
+
+Segmentation:
+
+Created subgroups based on Province, Zip Code, and Gender.
+
+Statistical Tests:
+
+Chi-squared test for differences in claim frequency (categorical variable).
+
+Independent t-tests (Welch’s t-test) for differences in claim severity and margin (continuous variables).
