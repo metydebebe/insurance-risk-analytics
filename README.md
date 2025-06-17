@@ -175,3 +175,49 @@ Statistical Tests:
 Chi-squared test for differences in claim frequency (categorical variable).
 
 Independent t-tests (Welch’s t-test) for differences in claim severity and margin (continuous variables).
+
+# Task 4: Dynamic, Risk-Based Pricing System
+
+### Overview
+
+This task implements and evaluates predictive models to support a dynamic, risk-based pricing framework for insurance policies. The modeling pipeline includes claim severity prediction, claim probability estimation, premium calculation, and model interpretability.
+
+### Data Preparation
+
+Source: ../data/processed/cleaned_task3_MachineLearningRating.csv
+
+Cleaning:
+
+Stripped whitespace from all object columns.
+
+Replaced empty strings with NaN, imputed missing numeric values with the median, and missing categorical values with 'Unknown'.
+
+Feature Engineering:
+
+Converted datetime columns to numeric features (year, month, day).
+
+One-hot encoded all categorical columns.
+
+Splitting:
+
+Created separate datasets for:
+
+Claim Severity (regression; only policies with claims)
+
+Claim Probability (classification; all policies)
+
+Used an 80:20 train-test split.
+
+### Modeling
+
+Claim Severity Prediction (Regression)
+Models: Linear Regression, Random Forest Regressor, XGBoost Regressor
+
+Metrics: Root Mean Squared Error (RMSE), R-squared
+
+Claim Probability Prediction (Classification)
+Models: Logistic Regression (sampled), Random Forest Classifier, XGBoost Classifier
+
+Metrics: Accuracy, Precision, Recall, F1-score, ROC AUC
+
+Sampling: Due to memory constraints, models were trained on a 10,000-row sample of the training set.
